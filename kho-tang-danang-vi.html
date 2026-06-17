@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kho Tàng Đà Nẵng · Bộ Sưu Tập Đà Nẵng</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --beige:#F4EFE6;
+  --beige-dark:#EDE4D4;
+  --beige-deeper:#E0D4BE;
+  --green:#2E7D5B;
+  --green-dark:#1E5C40;
+  --gold:#D4A857;
+  --gold-light:#E8C070;
+  --gold-dark:#A8842A;
+  --ink:#1A1208;
+  --ink-mid:#3D2E1A;
+  --ink-soft:#6B5A3E;
+  --ink-faded:#9E8B6C;
+  --white:#FFFFFF;
+  --card-bg:#FDFAF4;
+}
+html{scroll-behavior:smooth}
+body{background:var(--beige);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+.serif{font-family:'Cormorant Garamond',serif}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.2}
+.eyebrow{font-size:0.65rem;letter-spacing:4px;text-transform:uppercase;font-weight:500;color:var(--ink-faded)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(244,239,230,0.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,168,87,0.2);transition:box-shadow .3s}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--green);letter-spacing:1px}
+.nav-brand span{color:var(--gold);margin-left:4px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .2s;font-weight:400}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--green);color:var(--white);border:none;padding:9px 22px;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-weight:500;transition:background .2s;font-family:'Inter',sans-serif}
+.nav-cta:hover{background:var(--green-dark)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 32px 80px;position:relative;overflow:hidden;background:var(--beige)}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 30%,rgba(46,125,91,0.04) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(212,168,87,0.06) 0%,transparent 50%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='0.5' fill='rgba(107,90,62,0.12)'/%3E%3C/svg%3E");pointer-events:none}
+.hero-map-lines{position:absolute;inset:0;pointer-events:none;opacity:0.06}
+.hero-flag{font-size:2rem;margin-bottom:20px;display:block;animation:gentleFloat 4s ease-in-out infinite}
+@keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hero-vi-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:700;color:var(--green);letter-spacing:-1px;line-height:1;margin-bottom:8px}
+.hero-en-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.6rem);font-weight:400;font-style:italic;color:var(--gold-dark);letter-spacing:3px;margin-bottom:24px}
+.hero-tagline{font-size:0.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--ink-faded);margin-bottom:36px}
+.hero-tagline span{margin:0 12px;color:var(--gold)}
+.hero-divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 32px}
+.hero-welcome{max-width:520px;font-size:0.92rem;color:var(--ink-soft);line-height:1.9;margin-bottom:40px}
+.hero-welcome strong{color:var(--green);font-weight:500}
+.hero-actions{display:flex;flex-direction:column;align-items:center;gap:20px}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:var(--white);padding:16px 36px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;transition:background .25s,transform .15s}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}
+.btn-primary svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.qr-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px}
+.qr-box{width:80px;height:80px;border:1.5px solid rgba(212,168,87,0.4);display:flex;align-items:center;justify-content:center;position:relative}
+.qr-box::before,.qr-box::after{content:'';position:absolute;width:14px;height:14px;border:2px solid var(--gold)}
+.qr-box::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
+.qr-box::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+.qr-inner{font-size:0.6rem;letter-spacing:1px;color:var(--ink-faded);text-align:center;line-height:1.5}
+.qr-label{font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faded)}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:scrollBob 2s ease-in-out infinite}
+@keyframes scrollBob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+.hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent)}
+.hero-scroll-label{font-size:0.58rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faded)}
+
+/* ── SECTIONS ── */
+.section{padding:100px 48px}
+.section-inner{max-width:1080px;margin:0 auto}
+.section-header{margin-bottom:56px}
+.section-header .eyebrow{margin-bottom:12px;display:block}
+.section-h{font-size:clamp(2rem,4vw,3rem);color:var(--green)}
+
+/* ── ABOUT ── */
+#about{background:var(--green);position:relative;overflow:hidden}
+#about::before{content:'';position:absolute;right:-100px;top:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.03)}
+#about .eyebrow{color:rgba(255,255,255,0.4)}
+#about .section-h{color:var(--white)}
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-story{color:rgba(255,255,255,0.75);font-size:0.9rem;line-height:2}
+.about-story p{margin-bottom:20px}
+.about-story strong{color:var(--gold-light);font-weight:500}
+.about-collected{border-left:2px solid rgba(212,168,87,0.4);padding-left:36px}
+.about-collected-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;font-style:italic;color:var(--white);margin-bottom:24px}
+.collected-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+.collected-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:8px}
+.collected-text{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:rgba(255,255,255,0.85)}
+.about-closing{grid-column:1/-1;text-align:center;color:rgba(255,255,255,0.5);font-size:0.8rem;letter-spacing:2px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.08)}
+
+/* ── CHAPTERS ── */
+#chapters{background:var(--beige);padding-top:0;padding-bottom:0}
+.chapters-header{padding:72px 0 48px;max-width:1080px;margin:0 auto}
+.chapters-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+
+.chapter-card{position:relative;background:var(--card-bg);padding:40px 32px;border:1px solid rgba(212,168,87,0.12);overflow:hidden;transition:background .25s}
+.chapter-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.chapter-card:hover{background:var(--white)}
+.chapter-card:hover::before{transform:scaleX(1)}
+/* Chapter VI distinct */
+.chapter-card.chapter-vi{background:var(--green);border-color:var(--green)}
+.chapter-card.chapter-vi:hover{background:var(--green-dark)}
+.chapter-card.chapter-vi::before{background:var(--gold)}
+
+.chapter-num{font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:6px;display:block}
+.chapter-roman{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--green);line-height:1;margin-bottom:8px}
+.chapter-card.chapter-vi .chapter-roman{color:var(--gold-light)}
+.chapter-theme{font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faded);margin-bottom:10px}
+.chapter-card.chapter-vi .chapter-theme{color:rgba(255,255,255,0.35)}
+.chapter-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+.chapter-card.chapter-vi .chapter-title{color:var(--white)}
+.chapter-location{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faded);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.chapter-location::before{content:'';display:inline-block;width:12px;height:1px;background:var(--gold)}
+.chapter-card.chapter-vi .chapter-location{color:rgba(255,255,255,0.4)}
+.chapter-desc{font-size:0.8rem;color:var(--ink-soft);line-height:1.7;font-style:italic}
+.chapter-card.chapter-vi .chapter-desc{color:rgba(255,255,255,0.6)}
+.chapter-corner{position:absolute;bottom:20px;right:20px;font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:rgba(46,125,91,0.05);line-height:1;pointer-events:none}
+.chapter-card.chapter-vi .chapter-corner{color:rgba(255,255,255,0.04)}
+
+/* ── HOW TO ── */
+#how{background:var(--beige-dark)}
+.how-steps{display:flex;gap:0;position:relative;flex-wrap:wrap;justify-content:center}
+.how-steps::before{content:'';position:absolute;top:28px;left:28px;right:28px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dark),transparent);opacity:0.3}
+.how-step{flex:1;min-width:130px;text-align:center;padding:0 14px;position:relative}
+.how-step-num{width:56px;height:56px;border-radius:50%;border:1px solid var(--gold);background:var(--beige-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--green);position:relative;z-index:1}
+.how-step-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:8px}
+.how-step-desc{font-size:0.75rem;color:var(--ink-soft);line-height:1.6}
+.how-note{padding:28px 36px;border:1px solid rgba(212,168,87,0.25);background:rgba(212,168,87,0.04);display:flex;gap:16px;align-items:flex-start;max-width:600px;margin:48px auto 0}
+.how-note-icon{font-size:1.2rem;flex-shrink:0;margin-top:2px}
+.how-note-text{font-size:0.8rem;color:var(--ink-soft);line-height:1.7}
+.how-note-text strong{color:var(--green);font-weight:500}
+
+/* ── COLLECTIBLES ── */
+#collectibles{background:var(--green-dark);position:relative;overflow:hidden}
+#collectibles::after{content:'';position:absolute;left:-120px;bottom:-120px;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,0.02);pointer-events:none}
+#collectibles .eyebrow{color:rgba(255,255,255,0.35)}
+#collectibles .section-h{color:var(--white)}
+
+.collectibles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
+.collectibles-grid-row2{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:64px}
+
+.collectible-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:28px 16px;text-align:center;cursor:pointer;position:relative;overflow:hidden;transition:border-color .3s,background .3s,transform .2s}
+.collectible-card::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(255,255,255,0.01) 4px,rgba(255,255,255,0.01) 5px)}
+.collectible-card:hover{border-color:rgba(212,168,87,0.4);transform:translateY(-2px)}
+.collectible-card.unlocked{border-color:rgba(212,168,87,0.5);background:rgba(212,168,87,0.06)}
+.collectible-card.unlocked:hover{border-color:var(--gold)}
+.collectible-card.special{border-color:rgba(212,168,87,0.2);background:rgba(212,168,87,0.04)}
+.collectible-card.special.unlocked{border-color:rgba(212,168,87,0.6);background:rgba(212,168,87,0.1)}
+/* Lưu Trữ Hoàn Chỉnh — hidden until triggered */
+.collectible-card.bonus{border-color:rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);opacity:0;pointer-events:none;transition:opacity .8s ease,border-color .3s,transform .2s}
+.collectible-card.bonus.revealed{opacity:1;pointer-events:all;border-color:rgba(212,168,87,0.4)}
+
+.col-icon{font-size:1.8rem;margin-bottom:10px;display:block}
+.col-num{font-family:'Cormorant Garamond',serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:4px}
+.col-title{font-family:'Cormorant Garamond',serif;font-size:0.88rem;font-style:italic;color:rgba(255,255,255,0.15);margin-bottom:4px;transition:color .3s}
+.collectible-card.unlocked .col-title{color:rgba(212,168,87,0.8)}
+.col-status{font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:rgba(212,168,87,0.35)}
+.collectible-card.unlocked .col-status{color:var(--gold-light)}
+.collectible-card.unlocked .col-num{color:rgba(212,168,87,0.6)}
+.col-hint{font-size:0.6rem;color:rgba(255,255,255,0.15);margin-top:6px;font-style:italic}
+.collectible-card.unlocked .col-hint{display:none}
+
+/* ── ARCHIVE INPUT ── */
+.archive-section{max-width:480px;margin:0 auto;background:rgba(255,255,255,0.04);border:1px solid rgba(212,168,87,0.25);padding:40px 36px;text-align:center;position:relative}
+.archive-section::before,.archive-section::after{content:'';position:absolute;width:20px;height:20px;border:1.5px solid var(--gold);opacity:0.5}
+.archive-section::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
+.archive-section::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+.archive-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--white);margin-bottom:6px}
+.archive-subtitle{font-size:0.68rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:28px}
+.archive-input-row{display:flex;gap:0}
+.archive-input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(212,168,87,0.3);border-right:none;padding:14px 18px;color:var(--white);font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:4px;text-transform:uppercase;outline:none;transition:border-color .2s,background .2s}
+.archive-input::placeholder{color:rgba(255,255,255,0.2);letter-spacing:2px;font-size:0.8rem}
+.archive-input:focus{border-color:rgba(212,168,87,0.6);background:rgba(255,255,255,0.08)}
+.archive-btn{background:var(--gold);color:var(--ink);border:none;padding:14px 24px;font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s;flex-shrink:0}
+.archive-btn:hover{background:var(--gold-light)}
+.archive-feedback{margin-top:14px;min-height:18px;font-size:0.75rem;letter-spacing:1px;transition:opacity .3s}
+.archive-feedback.error{color:rgba(220,80,80,0.8)}
+.archive-feedback.success{color:var(--gold-light)}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(20,14,6,0.85);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.open{display:flex}
+.modal-paper{background:var(--card-bg);max-width:520px;width:100%;position:relative;border:1px solid rgba(212,168,87,0.3);box-shadow:0 0 0 6px rgba(212,168,87,0.06),0 40px 80px rgba(20,14,6,0.5);animation:paperUnfold .5s cubic-bezier(0.22,1,0.36,1) both;transform-origin:top center}
+@keyframes paperUnfold{from{opacity:0;transform:scaleY(0.3) translateY(-20px)}to{opacity:1;transform:scaleY(1) translateY(0)}}
+.modal-paper::before,.modal-paper::after{content:'';position:absolute;width:24px;height:24px;border:2px solid var(--gold);z-index:1}
+.modal-paper::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
+.modal-paper::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+.modal-corners::before,.modal-corners::after{content:'';position:absolute;width:24px;height:24px;border:2px solid var(--gold)}
+.modal-corners::before{top:-1px;right:-1px;border-left:none;border-bottom:none}
+.modal-corners::after{bottom:-1px;left:-1px;border-right:none;border-top:none}
+.modal-header{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:28px 32px 22px;border-bottom:2px solid rgba(212,168,87,0.3);position:relative}
+.modal-header-label{font-size:0.6rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px}
+.modal-header-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold-light);line-height:1}
+.modal-header-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,0.7);margin-top:4px}
+.modal-close{position:absolute;top:16px;right:20px;background:rgba(255,255,255,0.1);border:none;width:28px;height:28px;border-radius:50%;color:rgba(255,255,255,0.5);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(255,255,255,0.2);color:#fff}
+.modal-body{padding:32px;background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(107,90,62,0.07) 27px,rgba(107,90,62,0.07) 28px)}
+.modal-stamp{font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faded);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.modal-stamp::before{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dark));opacity:0.4}
+.modal-stamp::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--gold-dark),transparent);opacity:0.4}
+.modal-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--ink-mid);line-height:1.95;animation:fadeInText .6s ease .2s both}
+@keyframes fadeInText{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.modal-footer{padding:20px 32px 28px;border-top:1px solid rgba(107,90,62,0.1);display:flex;justify-content:space-between;align-items:center}
+.modal-footer-note{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faded)}
+.modal-footer-mark{font-family:'Cormorant Garamond',serif;font-size:0.85rem;font-style:italic;color:var(--gold-dark)}
+
+/* ── NOTES ── */
+#notes{background:var(--beige);text-align:center;padding:100px 48px;position:relative;overflow:hidden}
+#notes::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:20rem;font-weight:700;color:rgba(46,125,91,0.04);position:absolute;top:-60px;left:20px;line-height:1;pointer-events:none}
+.notes-carousel{max-width:640px;margin:0 auto;position:relative;min-height:120px}
+.note-slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity .8s ease;pointer-events:none}
+.note-slide.active{opacity:1;pointer-events:all}
+.note-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2rem);font-style:italic;font-weight:400;color:var(--ink-mid);line-height:1.5;margin-bottom:20px}
+.note-attr{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faded)}
+.notes-dots{display:flex;gap:8px;justify-content:center;margin-top:140px}
+.note-dot{width:6px;height:6px;border-radius:50%;background:var(--beige-deeper);cursor:pointer;transition:background .2s;border:none}
+.note-dot.active{background:var(--green)}
+
+/* ── FAQ ── */
+#faq{background:var(--beige-dark)}
+.faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid rgba(107,90,62,0.12)}
+.faq-q{padding:24px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);list-style:none}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{content:'+';font-family:'Inter',sans-serif;font-size:1.2rem;font-weight:300;color:var(--gold-dark);flex-shrink:0;margin-top:2px;transition:transform .2s}
+details[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 0 24px;font-size:0.85rem;color:var(--ink-soft);line-height:1.8}
+.faq-a p{margin-bottom:8px}
+.faq-a em{color:var(--green);font-style:normal;font-weight:500}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:64px 48px 40px;color:rgba(255,255,255,0.4)}
+.footer-inner{max-width:1080px;margin:0 auto}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:32px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--white)}
+.footer-brand-en{font-size:0.75rem;letter-spacing:2px;color:var(--gold);margin-bottom:8px;display:block}
+.footer-tagline{font-size:0.72rem;letter-spacing:2px;color:rgba(255,255,255,0.3);margin-top:6px}
+.footer-tagline span{color:var(--gold);opacity:0.6;margin:0 6px}
+.footer-right{text-align:right}
+.footer-archive{font-family:'Cormorant Garamond',serif;font-size:0.85rem;font-style:italic;color:rgba(255,255,255,0.5);margin-bottom:8px}
+.footer-note{font-size:0.7rem;color:rgba(255,255,255,0.25);line-height:1.6}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.68rem;letter-spacing:1px}
+.footer-copy{color:rgba(255,255,255,0.2)}
+.footer-mark{color:rgba(212,168,87,0.4);font-family:'Cormorant Garamond',serif;font-style:italic}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:16px 24px}
+  .nav-links{display:none}
+  .section{padding:72px 24px}
+  .about-layout{grid-template-columns:1fr;gap:48px}
+  .chapters-grid{grid-template-columns:repeat(2,1fr)}
+  .how-steps{flex-direction:column;gap:32px}
+  .how-steps::before{display:none}
+  .collectibles-grid,.collectibles-grid-row2{grid-template-columns:repeat(2,1fr)}
+  .footer-top{flex-direction:column;gap:32px}
+  .footer-right{text-align:left}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+@media(max-width:560px){
+  .hero-vi-title{font-size:3rem}
+  .chapters-grid{grid-template-columns:1fr}
+  .collectibles-grid,.collectibles-grid-row2{grid-template-columns:1fr}
+  .modal-paper{margin:8px}
+  .archive-section{padding:28px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-flag,.hero-scroll,.modal-paper,.modal-text{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* ── Chapter Journal Modal ── */
+.ch-modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(20,14,6,0.88);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto}
+.ch-modal-overlay.open{display:flex}
+.ch-journal{background:var(--card-bg);max-width:680px;width:100%;border:1px solid rgba(212,168,87,0.25);box-shadow:0 0 0 6px rgba(212,168,87,0.04),0 40px 80px rgba(20,14,6,0.5);animation:paperUnfold .5s cubic-bezier(0.22,1,0.36,1) both;transform-origin:top center;margin:auto}
+.ch-journal-header{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:28px 32px 22px;border-bottom:2px solid rgba(212,168,87,0.3);position:relative}
+.ch-journal-eyebrow{font-size:0.6rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px;display:block}
+.ch-journal-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--gold-light);line-height:1;margin-bottom:4px}
+.ch-journal-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:rgba(255,255,255,0.75)}
+.ch-journal-location{font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:6px}
+.ch-close{position:absolute;top:16px;right:20px;background:rgba(255,255,255,0.1);border:none;width:28px;height:28px;border-radius:50%;color:rgba(255,255,255,0.5);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.ch-close:hover{background:rgba(255,255,255,0.2);color:#fff}
+.ch-journal-body{padding:32px;background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(107,90,62,0.07) 27px,rgba(107,90,62,0.07) 28px)}
+.ch-journal-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--ink-mid);line-height:2.1}
+.ch-journal-text p{margin-bottom:1em}
+.ch-journal-drop{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--green);float:left;line-height:0.85;margin:4px 8px 0 0}
+.ch-mission-block{margin:24px 0 0;padding:20px 24px;background:rgba(46,125,91,0.05);border-left:3px solid var(--green)}
+.ch-mission-label{font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:8px;font-weight:600}
+.ch-mission-text{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--ink-soft);line-height:1.8;font-style:italic}
+.ch-journal-footer{padding:16px 32px;border-top:1px solid rgba(107,90,62,0.1);display:flex;justify-content:space-between;font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faded)}
+.chapter-read-btn{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--green);background:none;border:none;cursor:pointer;padding:0;font-family:'Inter',sans-serif;font-weight:500;transition:gap .2s}
+.chapter-read-btn:hover{gap:10px}
+.chapter-read-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
+.chapter-card.chapter-vi .chapter-read-btn{color:var(--gold-light)}
+
+/* Archive unlock combined display */
+.unlock-record-block{padding:28px 32px 20px;background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(107,90,62,0.07) 27px,rgba(107,90,62,0.07) 28px)}
+.unlock-archive-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--ink-mid);line-height:2}
+.unlock-archive-text p{margin-bottom:.6em}
+.unlock-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(107,90,62,0.2),transparent);margin:0 32px}
+.unlock-collection-block{padding:22px 32px 28px;background:linear-gradient(135deg,rgba(46,125,91,0.04),rgba(212,168,87,0.04))}
+.unlock-col-label{font-size:0.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--ink-faded);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.unlock-col-label::before,.unlock-col-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dark));opacity:0.3}
+.unlock-col-label::after{background:linear-gradient(90deg,var(--gold-dark),transparent)}
+.unlock-col-icon{font-size:1.6rem;display:block;margin-bottom:8px}
+.unlock-col-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--green);margin-bottom:4px}
+.unlock-col-code{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faded);margin-bottom:12px;font-family:'Cormorant Garamond',serif;font-style:italic}
+.unlock-col-desc{font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--ink-soft);line-height:1.85;font-style:italic}
+
+/* Collector's Letter */
+.letter-body{padding:32px;font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--ink-mid);line-height:2.1;background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(107,90,62,0.07) 27px,rgba(107,90,62,0.07) 28px)}
+.letter-body p{margin-bottom:1em}
+.letter-sig{font-style:italic;color:var(--ink-soft);margin-top:1.2em}
+.letter-closing{border-top:1px solid rgba(107,90,62,0.1);padding-top:16px;margin-top:16px;font-style:italic;color:var(--ink-soft)}
+
+/* Lưu Trữ Hoàn Chỉnh */
+.complete-body{padding:36px 32px;text-align:center;background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(107,90,62,0.07) 27px,rgba(107,90,62,0.07) 28px)}
+.complete-icon{font-size:2.8rem;display:block;margin-bottom:14px}
+.complete-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--green);margin-bottom:14px}
+.complete-text{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--ink-soft);line-height:1.9;font-style:italic;max-width:360px;margin:0 auto}
+
+/* Postcard */
+.postcard-overlay{position:fixed;inset:0;z-index:400;background:rgba(20,14,6,0.9);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px}
+.postcard-overlay.open{display:flex}
+.postcard{background:var(--card-bg);max-width:520px;width:100%;border:1px solid rgba(212,168,87,0.3);box-shadow:0 0 0 8px rgba(212,168,87,0.05),0 40px 80px rgba(20,14,6,0.6);animation:paperUnfold .5s cubic-bezier(0.22,1,0.36,1) both;position:relative}
+.postcard::before,.postcard::after{content:'';position:absolute;width:22px;height:22px;border:2px solid var(--gold);z-index:1}
+.postcard::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
+.postcard::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+.postcard-img{width:100%;height:200px;background:linear-gradient(135deg,var(--green-dark),var(--green) 60%,var(--gold-dark));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.postcard-img::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='0.6' fill='rgba(255,255,255,0.15)'/%3E%3C/svg%3E")}
+.postcard-img-text{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:rgba(255,255,255,0.4);letter-spacing:2px;text-align:center;padding:20px}
+.postcard-body{padding:28px 32px}
+.postcard-stamp-line{font-size:0.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--ink-faded);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.postcard-stamp-line::before,.postcard-stamp-line::after{content:'';flex:1;height:1px;opacity:0.3;background:var(--gold-dark)}
+.postcard-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--green);margin-bottom:14px}
+.postcard-msg{font-family:'Cormorant Garamond',serif;font-size:0.98rem;color:var(--ink-soft);line-height:1.9;font-style:italic}
+.postcard-close{position:absolute;top:14px;right:16px;background:rgba(255,255,255,0.15);border:none;width:26px;height:26px;border-radius:50%;color:rgba(255,255,255,0.7);font-size:0.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.postcard-footer{border-top:1px solid rgba(107,90,62,0.1);padding:12px 32px;display:flex;justify-content:space-between;font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faded)}
+
+</style>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-brand">Kho Tàng<span>Đà Nẵng</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Giới Thiệu</a></li>
+    <li><a href="#chapters">Chương</a></li>
+    <li><a href="#collectibles">Lưu Trữ</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('collectibles').scrollIntoView({behavior:'smooth'})">Tham Gia Lưu Trữ</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <svg class="hero-map-lines" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="rgba(107,90,62,1)" stroke-width="0.5" stroke-dasharray="4,8"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="rgba(107,90,62,1)" stroke-width="0.5" stroke-dasharray="4,8"/>
+    <line x1="0" y1="600" x2="1200" y2="600" stroke="rgba(107,90,62,1)" stroke-width="0.5" stroke-dasharray="4,8"/>
+    <line x1="200" y1="0" x2="200" y2="800" stroke="rgba(107,90,62,1)" stroke-width="0.5" stroke-dasharray="4,8"/>
+    <line x1="500" y1="0" x2="500" y2="800" stroke="rgba(107,90,62,1)" stroke-width="0.5" stroke-dasharray="4,8"/>
+    <line x1="800" y1="0" x2="800" y2="800" stroke="rgba(107,90,62,1)" stroke-width="0.5" stroke-dasharray="4,8"/>
+    <line x1="1000" y1="0" x2="1000" y2="800" stroke="rgba(107,90,62,1)" stroke-width="0.5" stroke-dasharray="4,8"/>
+    <g transform="translate(1050,120)">
+      <circle cx="0" cy="0" r="40" fill="none" stroke="rgba(107,90,62,0.8)" stroke-width="0.8"/>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="rgba(107,90,62,0.5)" stroke-width="0.5"/>
+      <line x1="0" y1="-40" x2="0" y2="40" stroke="rgba(107,90,62,0.8)" stroke-width="0.8"/>
+      <line x1="-40" y1="0" x2="40" y2="0" stroke="rgba(107,90,62,0.8)" stroke-width="0.8"/>
+      <polygon points="0,-38 4,-12 0,-8 -4,-12" fill="rgba(107,90,62,0.7)"/>
+      <polygon points="0,8 4,12 0,38 -4,12" fill="rgba(107,90,62,0.4)"/>
+      <text x="0" y="-46" text-anchor="middle" font-size="8" fill="rgba(107,90,62,0.8)" font-family="serif">N</text>
+    </g>
+    <circle cx="150" cy="680" r="3" fill="rgba(46,125,91,0.4)"/>
+    <circle cx="350" cy="580" r="2" fill="rgba(46,125,91,0.3)"/>
+    <circle cx="600" cy="650" r="3" fill="rgba(46,125,91,0.4)"/>
+    <path d="M150 680 Q250 630 350 580 Q480 615 600 650" stroke="rgba(46,125,91,0.2)" stroke-width="1.5" fill="none" stroke-dasharray="3,5"/>
+  </svg>
+  <div class="hero-content reveal">
+    <span class="hero-flag">🧭</span>
+    <div class="hero-vi-title">Kho Tàng Đà Nẵng</div>
+    <div class="hero-en-title">Bộ Sưu Tập Đà Nẵng</div>
+    <div class="hero-tagline"><span>Khám Phá</span>&#183;<span>Sưu Tập</span>&#183;<span>Ghi Nhớ</span></div>
+    <div class="hero-divider"></div>
+    <p class="hero-welcome">
+      <strong>Chào mừng, Nhà Thám Hiểm.</strong><br>
+      Khám phá năm chương được Người Sưu Tập để lại.<br>
+      Tự mình hoàn thiện trang cuối cùng.<br>
+      Mỗi du khách sẽ tìm thấy một kho báu khác nhau.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('collectibles').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Tham Gia Kho Lưu Trữ
+      </button>
+      <div class="qr-placeholder">
+        <img src="data:image/png;base64,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"
+             alt="LINE QR Code — Kho Tàng Đà Nẵng"
+             style="width:100px;height:100px;display:block;border:2px solid rgba(212,168,87,0.35);padding:6px;background:#fff;"/>
+        <span class="qr-label">Quét để tham gia &middot; LINE</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div><span class="hero-scroll-label">Cuộn xuống</span></div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="eyebrow">Kho Tàng Của Người Sưu Tập</span>
+      <h2 class="section-h serif">Câu Chuyện Đằng Sau Kho Lưu Trữ</h2>
+    </div>
+    <div class="about-layout">
+      <div class="about-story reveal">
+        <p>Ngày xưa, có một người lữ hành yêu thích khám phá thế giới.</p>
+        <p>Ông không bao giờ sưu tập tem. Ông không bao giờ sưu tập đồ lưu niệm.</p>
+        <p>Thay vào đó, ông sưu tập những khoảnh khắc xứng đáng được ghi nhớ.</p>
+        <p>Over many years, he travelled throughout Central Vietnam, recording every meaningful place, every unforgettable memory, and every discovery into a journal called <strong>Kho Tàng Của Người Sưu Tập</strong>.</p>
+        <p>Ông tin rằng:</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,0.9);padding-left:16px;border-left:2px solid rgba(212,168,87,0.5)">"Kho báu vĩ đại nhất không bao giờ là điểm đến.<br>Đó là những ký ức chúng ta chọn lưu giữ."</p>
+        <p>Sáu chương này không phải là cuộc săn kho báu. Chúng là sáu cuốn nhật ký du lịch mà Người Sưu Tập để lại.</p>
+        <p>Nhiệm vụ của bạn không phải là giải mã bí ẩn. Chỉ đơn giản là trải nghiệm những nơi này, tạo ra ký ức của riêng bạn và tiếp tục kho lưu trữ.</p>
+      </div>
+      <div class="about-collected reveal">
+        <div class="about-collected-title">Ông không bao giờ sưu tập:</div>
+        <div class="collected-item"><div class="collected-dot"></div><div class="collected-text">Tem</div></div>
+        <div class="collected-item"><div class="collected-dot"></div><div class="collected-text">Đồ lưu niệm</div></div>
+        <div class="collected-item" style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(212,168,87,0.2)">
+          <div class="collected-dot" style="background:var(--gold)"></div>
+          <div class="collected-text">Ông sưu tập <em>khoảnh khắc</em></div>
+        </div>
+      </div>
+      <div class="about-closing reveal">
+        <span class="eyebrow">Kho Tàng Đà Nẵng &middot; Bộ Sưu Tập Đà Nẵng &middot; 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section id="chapters" class="section" style="padding-top:0;padding-bottom:0">
+  <div style="max-width:100%">
+    <div class="chapters-header reveal" style="padding-left:48px">
+      <span class="eyebrow" style="display:block;margin-bottom:12px">Năm Chương &middot; Một Trang Cuối</span>
+      <h2 class="section-h serif">Các Chương</h2>
+    </div>
+    <div class="chapters-grid reveal">
+
+      <div class="chapter-card">
+        <span class="chapter-num">Chapter</span>
+        <div class="chapter-roman">I</div>
+        <div class="chapter-theme">Khởi Đầu Hành Trình</div>
+        <div class="chapter-title">&#x1F409; Dragon Awakens</div>
+        <div class="chapter-location">Da Nang</div>
+        <p class="chapter-desc">Mỗi hành trình đều có điểm khởi đầu riêng của nó.</p>
+        <button class="chapter-read-btn" onclick="openChapter(1)">
+          Đọc Nhật Ký <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <div class="chapter-corner">I</div>
+      </div>
+
+      <div class="chapter-card">
+        <span class="chapter-num">Chapter</span>
+        <div class="chapter-roman">II</div>
+        <div class="chapter-theme">Khám Phá</div>
+        <div class="chapter-title">&#x26F0;&#xFE0F; Secret Between Mountain &amp; Sea</div>
+        <div class="chapter-location">Ba Na Hills</div>
+        <p class="chapter-desc">Có những bí mật không ẩn giấu ở xa — chỉ chờ bạn thay đổi góc nhìn.</p>
+        <button class="chapter-read-btn" onclick="openChapter(2)">
+          Đọc Nhật Ký <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <div class="chapter-corner">II</div>
+      </div>
+
+      <div class="chapter-card">
+        <span class="chapter-num">Chapter</span>
+        <div class="chapter-roman">III</div>
+        <div class="chapter-theme">Câu Chuyện</div>
+        <div class="chapter-title">&#x1F3EE; Lanterns of Ancient Town</div>
+        <div class="chapter-location">Hội An</div>
+        <p class="chapter-desc">Đằng sau mỗi ánh đèn, dường như đều ẩn chứa một câu chuyện.</p>
+        <button class="chapter-read-btn" onclick="openChapter(3)">
+          Đọc Nhật Ký <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <div class="chapter-corner">III</div>
+      </div>
+
+      <div class="chapter-card">
+        <span class="chapter-num">Chapter</span>
+        <div class="chapter-roman">IV</div>
+        <div class="chapter-theme">Cuộc Sống</div>
+        <div class="chapter-title">&#x1F334; Island of Simple Joys</div>
+        <div class="chapter-location">Cam Thanh</div>
+        <p class="chapter-desc">Ký ức quý giá nhất thường là những khoảnh khắc không có trong kế hoạch.</p>
+        <button class="chapter-read-btn" onclick="openChapter(4)">
+          Đọc Nhật Ký <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <div class="chapter-corner">IV</div>
+      </div>
+
+      <div class="chapter-card">
+        <span class="chapter-num">Chapter</span>
+        <div class="chapter-roman">V</div>
+        <div class="chapter-theme">Bình Yên</div>
+        <div class="chapter-title">&#x1F30A; Where Ocean Meets Peace</div>
+        <div class="chapter-location">Son Trà Peninsula</div>
+        <p class="chapter-desc">Hành trình thực sự đôi khi được hoàn thành trong sự tĩnh lặng.</p>
+        <button class="chapter-read-btn" onclick="openChapter(5)">
+          Đọc Nhật Ký <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <div class="chapter-corner">V</div>
+      </div>
+
+      <div class="chapter-card chapter-vi">
+        <span class="chapter-num" style="color:rgba(212,168,87,0.6)">Chapter</span>
+        <div class="chapter-roman">VI</div>
+        <div class="chapter-theme">Câu Chuyện Của Bạn</div>
+        <div class="chapter-title">&#x1F4D6; Your Own Journal</div>
+        <div class="chapter-location">Anywhere</div>
+        <p class="chapter-desc">Năm chương đầu thuộc về Người Sưu Tập. Trang cuối cùng thuộc về bạn.</p>
+        <button class="chapter-read-btn" onclick="openChapter(6)">
+          Nhật Ký Của Bạn <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <div class="chapter-corner">VI</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO -->
+<section class="section" id="how">
+  <div class="section-inner">
+    <div class="section-header reveal" style="text-align:center">
+      <span class="eyebrow">Cách Tham Gia</span>
+      <h2 class="section-h serif">Cách Tham Gia</h2>
+    </div>
+    <div class="how-steps reveal">
+      <div class="how-step"><div class="how-step-num">1</div><div class="how-step-title">Nhận Thẻ</div><p class="how-step-desc">Collect your exploration cards at a participating accommodation.</p></div>
+      <div class="how-step"><div class="how-step-num">2</div><div class="how-step-title">Chọn Nhiệm Vụ</div><p class="how-step-desc">Chọn bất kỳ nhiệm vụ nào từ chương bạn muốn khám phá.</p></div>
+      <div class="how-step"><div class="how-step-num">3</div><div class="how-step-title">Chụp Ảnh</div><p class="how-step-desc">Ghi lại khám phá của bạn. Một bức ảnh là bằng chứng của bạn.</p></div>
+      <div class="how-step"><div class="how-step-num">4</div><div class="how-step-title">Nhận Mã Lưu Trữ</div><p class="how-step-desc">Xuất trình ảnh của bạn tại đại lý du lịch tham gia để nhận Mã Lưu Trữ.</p></div>
+      <div class="how-step"><div class="how-step-num">5</div><div class="how-step-title">Mở Khóa Hồ Sơ Lưu Trữ</div><p class="how-step-desc">Nhập Mã Lưu Trữ trên trang web này để mở khóa hồ sơ tương ứng.</p></div>
+      <div class="how-step"><div class="how-step-num">6</div><div class="how-step-title">Nhận Thẻ Sưu Tập</div><p class="how-step-desc">Quay lại đại lý du lịch để nhận Thẻ Sưu Tập vật lý của bạn.</p></div>
+    </div>
+    <div class="how-note reveal">
+      <div class="how-note-icon">🧭</div>
+      <div class="how-note-text"><strong>Khám phá theo tốc độ của bạn.</strong><br>Các chương có thể hoàn thành theo bất kỳ thứ tự nào. Không có lịch trình — chỉ có khám phá.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIBLES -->
+<section class="section" id="collectibles">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="eyebrow">Những Gì Bạn Sẽ Tìm Thấy</span>
+      <h2 class="section-h serif">Kho Lưu Trữ Sưu Tập</h2>
+      <p style="color:rgba(255,255,255,0.4);font-size:0.85rem;margin-top:12px;max-width:520px">Mỗi Hồ Sơ Lưu Trữ được mở khóa sau khi hoàn thành chương tương ứng. Nhấp vào hồ sơ đã mở khóa để đọc nội dung.</p>
+    </div>
+    <div class="collectibles-grid reveal">
+      <div class="collectible-card" id="card-c01" onclick="openRecord('c01')"><span class="col-icon" id="icon-c01">&#128274;</span><div class="col-num">Collection 01</div><div class="col-title" id="title-c01">Chiếc Chìa Khóa Đầu Tiên</div><div class="col-status" id="status-c01">Locked</div><div class="col-hint">Nhập Mã Lưu Trữ để mở khóa</div></div>
+      <div class="collectible-card" id="card-c02" onclick="openRecord('c02')"><span class="col-icon" id="icon-c02">&#128274;</span><div class="col-num">Collection 02</div><div class="col-title" id="title-c02">Khoảnh Khắc Được Đóng Khung</div><div class="col-status" id="status-c02">Locked</div><div class="col-hint">Nhập Mã Lưu Trữ để mở khóa</div></div>
+      <div class="collectible-card" id="card-c03" onclick="openRecord('c03')"><span class="col-icon" id="icon-c03">&#128274;</span><div class="col-num">Collection 03</div><div class="col-title" id="title-c03">Kết Nối</div><div class="col-status" id="status-c03">Locked</div><div class="col-hint">Nhập Mã Lưu Trữ để mở khóa</div></div>
+    </div>
+    <div class="collectibles-grid-row2 reveal">
+      <div class="collectible-card" id="card-c04" onclick="openRecord('c04')"><span class="col-icon" id="icon-c04">&#128274;</span><div class="col-num">Collection 04</div><div class="col-title" id="title-c04">Những Trang Trống</div><div class="col-status" id="status-c04">Locked</div><div class="col-hint">Nhập Mã Lưu Trữ để mở khóa</div></div>
+      <div class="collectible-card" id="card-c05" onclick="openRecord('c05')"><span class="col-icon" id="icon-c05">&#128274;</span><div class="col-num">Hồ Sơ Lưu Trữ 05</div><div class="col-title" id="title-c05">Nơi Đại Dương Gặp Bình Yên</div><div class="col-status" id="status-c05">Locked</div><div class="col-hint">Nhập Mã Lưu Trữ để mở khóa</div></div>
+      <div class="collectible-card special" id="card-clt" onclick="openRecord('clt')"><span class="col-icon" id="icon-clt">&#9993;</span><div class="col-num">Thư Của Người Sưu Tập</div><div class="col-title" id="title-clt">Hồ Sơ Cuối Cùng</div><div class="col-status" id="status-clt">Locked</div><div class="col-hint">Mở khóa sau năm chương</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr;gap:16px;max-width:340px;margin:0 auto 64px" id="bonusRow">
+      <div class="collectible-card bonus special" id="card-bonus" onclick="openRecord('bonus')"><span class="col-icon" id="icon-bonus">&#128220;</span><div class="col-num">Lưu Trữ Hoàn Chỉnh</div><div class="col-title" id="title-bonus">Cả Sáu Chương</div><div class="col-status" id="status-bonus">Ẩn</div></div>
+    </div>
+    <div class="archive-section reveal" id="archiveInput">
+      <div class="archive-title">Nhập Mã Lưu Trữ</div>
+      <div class="archive-subtitle">Received from participating accommodation</div>
+      <div class="archive-input-row">
+        <input class="archive-input" id="codeInput" type="text" maxlength="8" placeholder="e.g. DRG-7421" autocomplete="off" spellcheck="false" onkeydown="if(event.key==='Enter')tryUnlock()"/>
+        <button class="archive-btn" onclick="tryUnlock()">Mở Khóa</button>
+      </div>
+      <div class="archive-feedback" id="archiveFeedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTES -->
+<section id="notes">
+  <div style="max-width:1080px;margin:0 auto;padding:100px 48px" class="reveal">
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="eyebrow" style="display:block;margin-bottom:12px">Từ Cuốn Sổ</span>
+      <h2 class="section-h serif">Ghi Chú Của Người Sưu Tập</h2>
+    </div>
+    <div class="notes-carousel">
+      <div class="note-slide active"><p class="note-text">&ldquo;Every journey begins with a small step.&rdquo;</p><span class="note-attr">&mdash; Chương I &middot; Rồng Thức Giấc</span></div>
+      <div class="note-slide"><p class="note-text">&ldquo;Some discoveries only appear from a different perspective.&rdquo;</p><span class="note-attr">&mdash; Chương II &middot; Núi &amp; Biển</span></div>
+      <div class="note-slide"><p class="note-text">&ldquo;Sometimes a little light reveals an entire story.&rdquo;</p><span class="note-attr">&mdash; Chương III &middot; Đèn Lồng Phố Cổ</span></div>
+      <div class="note-slide"><p class="note-text">&ldquo;The best scenery appears when we stop rushing.&rdquo;</p><span class="note-attr">&mdash; Chương IV &middot; Đảo Vui Đơn Giản</span></div>
+      <div class="note-slide"><p class="note-text">&ldquo;Some places become meaningful only over time.&rdquo;</p><span class="note-attr">&mdash; Chương V &middot; Nơi Đại Dương Gặp Bình Yên</span></div>
+    </div>
+    <div class="notes-dots">
+      <button class="note-dot active" onclick="goNote(0)"></button>
+      <button class="note-dot" onclick="goNote(1)"></button>
+      <button class="note-dot" onclick="goNote(2)"></button>
+      <button class="note-dot" onclick="goNote(3)"></button>
+      <button class="note-dot" onclick="goNote(4)"></button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="section-header reveal" style="text-align:center">
+      <span class="eyebrow">Câu Hỏi</span>
+      <h2 class="section-h serif">Câu Hỏi Thường Gặp</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details><summary class="faq-q">Tôi có cần hoàn thành các chương theo thứ tự không?</summary><div class="faq-a"><p><em>Không.</em> Khám phá tự do. Mỗi chương độc lập.</p></div></details>
+      <details><summary class="faq-q">Tôi phải hoàn thành bao nhiêu nhiệm vụ mỗi chương?</summary><div class="faq-a"><p>Một nhiệm vụ mỗi chương là đủ để mở khóa Hồ Sơ Lưu Trữ.</p></div></details>
+      <details><summary class="faq-q">Làm thế nào để nhận Mã Lưu Trữ?</summary><div class="faq-a"><p>Xuất trình ảnh hoàn thành tại đại lý du lịch tham gia. Nhân viên sẽ cung cấp <em>Mã Lưu Trữ</em>. Nhập mã vào trang web này để mở khóa Hồ Sơ Lưu Trữ tương ứng.</p></div></details>
+      <details><summary class="faq-q">Làm thế nào để nhận Thẻ Sưu Tập vật lý?</summary><div class="faq-a"><p>Sau khi mở khóa Hồ Sơ Lưu Trữ trực tuyến, quay lại đại lý du lịch tham gia và hiển thị màn hình hồ sơ đã mở khóa. Nhân viên sẽ cung cấp Thẻ Sưu Tập vật lý.</p></div></details>
+      <details><summary class="faq-q">Điều gì xảy ra sau khi hoàn thành năm chương?</summary><div class="faq-a"><p>Du khách hoàn thành bất kỳ <em>năm chương</em> nào sẽ mở khóa Thư Của Người Sưu Tập. Chương thứ sáu là tùy chọn và mời bạn để lại trang của riêng mình trong kho lưu trữ.</p></div></details>
+      <details><summary class="faq-q">Hồ sơ đã mở khóa của tôi có được lưu không?</summary><div class="faq-a"><p><em>Có.</em> Hồ sơ của bạn được lưu trên thiết bị này và vẫn có thể truy cập khi bạn quay lại, sử dụng cùng một trình duyệt.</p></div></details>
+      <details><summary class="faq-q">Làm thế nào để đổi phần thưởng?</summary><div class="faq-a">
+        <p><strong>Đổi Phần Thưởng</strong></p>
+        <p>Để đảm bảo mọi quà lưu niệm được chuẩn bị đúng cách, tất cả phần thưởng được phân phối độc quyền bởi các tài xế tham gia của <em>Kho Tàng Travel</em>.</p>
+        <p>Vui lòng xuất trình chương đã hoàn thành vào đầu chuyến đi tiếp theo của bạn.</p>
+        <p>Hướng Dẫn Viên Thám Hiểm của bạn sẽ giúp bạn đổi quà lưu niệm trong suốt hành trình.</p>
+      </div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <span class="footer-brand-en">Bộ Sưu Tập Đà Nẵng</span>
+        <div class="footer-brand">Kho Tàng Đà Nẵng</div>
+        <div class="footer-tagline">Explore<span>&middot;</span>Collect<span>&middot;</span>Remember</div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-archive">Kho Tàng Của Người Sưu Tập</div>
+        <div class="footer-note">Mỗi du khách khám phá<br>một kho báu khác nhau.</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Kho Tàng Đà Nẵng. All rights reserved.</span>
+      <span class="footer-mark">Chương Trình Du Lịch Miền Trung Việt Nam</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ARCHIVE RECORD MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal-paper" id="modalPaper">
+    <div class="modal-corners"></div>
+    <div class="modal-header">
+      <div class="modal-header-label" id="modalLabel">Kho Tàng Của Người Sưu Tập</div>
+      <div class="modal-header-num" id="modalNum">Hồ Sơ Lưu Trữ</div>
+      <div class="modal-header-title" id="modalTitle">Unlocked</div>
+      <button class="modal-close" onclick="document.getElementById('modalOverlay').classList.remove('open')">&#10005;</button>
+    </div>
+    <div class="modal-body" style="padding:0"><div id="modalText"></div></div>
+    <div class="modal-footer">
+      <span class="modal-footer-note">Kho Tàng Đà Nẵng &middot; 2026</span>
+      <span class="modal-footer-mark">Nhật Ký Nhà Thám Hiểm</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER JOURNAL MODAL -->
+<div class="ch-modal-overlay" id="chModalOverlay" onclick="closeChModalOutside(event)">
+  <div class="ch-journal" id="chJournal">
+    <div class="ch-journal-header">
+      <span class="ch-journal-eyebrow" id="chEyebrow">Kho Tàng Của Người Sưu Tập</span>
+      <div class="ch-journal-num" id="chNum">I</div>
+      <div class="ch-journal-title" id="chTitle">Dragon Awakens</div>
+      <div class="ch-journal-location" id="chLocation">📍 Da Nang</div>
+      <button class="ch-close" onclick="document.getElementById('chModalOverlay').classList.remove('open')">&#10005;</button>
+    </div>
+    <div class="ch-journal-body">
+      <div id="chTheme" style="font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faded);margin-bottom:20px"></div>
+      <div class="ch-journal-text" id="chJournalText"></div>
+      <div class="ch-mission-block">
+        <div class="ch-mission-label">Mission</div>
+        <div class="ch-mission-text" id="chMissionText"></div>
+      </div>
+    </div>
+    <div class="ch-journal-footer">
+      <span>Kho Tàng Đà Nẵng &middot; 2026</span>
+      <span>Nhật Ký Người Sưu Tập</span>
+    </div>
+  </div>
+</div>
+
+<!-- POSTCARD -->
+<div class="postcard-overlay" id="postcardOverlay" onclick="closePostcard(event)">
+  <div class="postcard">
+    <button class="postcard-close" onclick="document.getElementById('postcardOverlay').classList.remove('open')">&#10005;</button>
+    <div class="postcard-img">
+      <div class="postcard-img-text">A place worth remembering</div>
+    </div>
+    <div class="postcard-body">
+      <div class="postcard-stamp-line">Đề Xuất Của Du Khách</div>
+      <div class="postcard-title">Một Đề Xuất Cuối Cùng</div>
+      <p class="postcard-msg">Trong tất cả những nơi được ghi lại trong kho lưu trữ,<br>đây vẫn là một trong những nơi tôi yêu thích nhất.<br><br>Không phải vì nó nổi tiếng.<br>Không phải vì nó xuất hiện trong sách hướng dẫn.<br><br>Mà vì một số nơi trở nên có ý nghĩa theo thời gian.<br><br>Có lẽ một ngày nào đó,<br>con đường của bạn sẽ giao với nó.<br><br>&#x1F9ED; Người Sưu Tập</p>
+    </div>
+    <div class="postcard-footer">
+      <span>Kho Tàng Đà Nẵng</span>
+      <span>Kho Tàng Của Người Sưu Tập &middot; 2026</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const ARCHIVE = {
+  'DRG-7421': {
+    key:'collection01', id:'c01',
+    label:"Kho Tàng Của Người Sưu Tập · Chapter I",
+    num:'Hồ Sơ Lưu Trữ 01', icon:'🗝️', colName:'Chiếc Chìa Khóa Đầu Tiên', colCode:'DRG-7421',
+    archiveLines:['Mỗi hành trình bắt đầu theo cách khác nhau.','Một số bắt đầu với một điểm đến.','Một số bắt đầu với một quyết định.','Một số bắt đầu với một bức ảnh duy nhất.','Điều quan trọng không phải là hành trình bắt đầu từ đâu.','Mà là nó đã bắt đầu.'],
+    colDesc:"Mọi câu chuyện vĩ đại đều bắt đầu bằng một bước chân. Chiếc chìa khóa này không mở cánh cửa nào. Nó chỉ nhắc nhở chúng ta rằng mọi hành trình bắt đầu bằng việc chọn khởi đầu."
+  },
+  'SEA-5188': {
+    key:'collection02', id:'c02',
+    label:"Kho Tàng Của Người Sưu Tập · Chapter II",
+    num:'Hồ Sơ Lưu Trữ 02', icon:'🪵', colName:'Khoảnh Khắc Được Đóng Khung', colCode:'SEA-5188',
+    archiveLines:['Đôi khi một góc nhìn mới thay đổi tất cả.','Không phải vì thế giới khác đi.','Mà vì cuối cùng chúng ta nhìn nó theo cách khác.','Nhiều khám phá không bị ẩn giấu.','Chúng chỉ đang chờ được chú ý.'],
+    colDesc:"Một số ký ức xứng đáng hơn là chỉ được nhớ đến. Chúng xứng đáng được đóng khung, để không bao giờ bị lãng quên."
+  },
+  'LTN-9032': {
+    key:'collection03', id:'c03',
+    label:"Kho Tàng Của Người Sưu Tập · Chapter III",
+    num:'Hồ Sơ Lưu Trữ 03', icon:'🪢', colName:'Kết Nối', colCode:'LTN-9032',
+    archiveLines:['Mỗi ánh đèn kể một câu chuyện.','Một số câu chuyện được nhớ đến.','Một số mờ dần.','Nhưng trong một khoảnh khắc ngắn ngủi,','chúng soi sáng con đường phía trước.'],
+    colDesc:"Một số người trở thành những cây cầu. Lặng lẽ kết nối những nơi chốn. Những ký ức. Và những người quan trọng nhất."
+  },
+  'NTR-2675': {
+    key:'collection04', id:'c04',
+    label:"Kho Tàng Của Người Sưu Tập · Chapter IV",
+    num:'Hồ Sơ Lưu Trữ 04', icon:'📖', colName:'Những Trang Trống', colCode:'NTR-2675',
+    archiveLines:['Không phải mọi ký ức đều đến từ những nơi nổi tiếng.','Một số ẩn trong những khoảnh khắc giản dị.','Một buổi chiều yên tĩnh.','Một bữa ăn chung.','Một khoảnh khắc tiếng cười.'],
+    colDesc:"Những câu chuyện hay nhất thường là những câu chuyện chúng ta không bao giờ lên kế hoạch để viết."
+  },
+  'PAC-6834': {
+    key:'collection05', id:'c05',
+    label:"Kho Tàng Của Người Sưu Tập · Chapter V",
+    num:'Hồ Sơ Lưu Trữ 05', icon:'📩', colName:'Nơi Đại Dương Gặp Bình Yên', colCode:'PAC-6834',
+    archiveLines:['Một số nơi yêu cầu chúng ta di chuyển.','Một số khác yêu cầu chúng ta ở lại.','Những nơi hiếm có nhất làm cả hai.','Chúng nhắc nhở chúng ta rằng sự bình yên cũng là một phần của mọi hành trình.'],
+    colDesc:"Một số nơi đáng đến thăm một lần. Một số ít đáng để quay lại."
+  },
+  'JRN-4517': {
+    key:'collectorLetter', id:'clt',
+    label:"Collector's Letter",
+    num:"Collector's Letter", icon:'✉️', colName:'Hồ Sơ Cuối Cùng', colCode:'JRN-4517',
+    archiveLines:[], colDesc:''
+  }
+};
+
+const ALL_KEYS = ['collection01','collection02','collection03','collection04','collection05','collectorLetter'];
+
+function loadSaved() {
+  ALL_KEYS.forEach(k => {
+    if (localStorage.getItem(k) === 'unlocked') {
+      const e = Object.values(ARCHIVE).find(x => x.key === k);
+      if (e) markUnlocked(e.id);
+    }
+  });
+  if (localStorage.getItem('archiveComplete') === 'unlocked') { markUnlocked('bonus'); revealBonus(); }
+  checkBonus();
+}
+
+function markUnlocked(id) {
+  const card   = document.getElementById('card-'   + id);
+  const icon   = document.getElementById('icon-'   + id);
+  const status = document.getElementById('status-' + id);
+  if (!card) return;
+  card.classList.add('unlocked');
+  if      (id==='clt')   icon.textContent = '📬';
+  else if (id==='bonus') icon.textContent = '📜';
+  else                   icon.textContent = '🗝';
+  status.textContent = 'Unlocked';
+  const hint = card.querySelector('.col-hint');
+  if (hint) hint.style.display = 'none';
+}
+
+function checkBonus() {
+  const done = ALL_KEYS.filter(k => localStorage.getItem(k)==='unlocked').length;
+  if (ALL_KEYS.every(k => localStorage.getItem(k)==='unlocked') && localStorage.getItem('archiveComplete')!=='unlocked') {
+    localStorage.setItem('archiveComplete','unlocked');
+    markUnlocked('bonus'); revealBonus();
+  } else if (done >= 5 || localStorage.getItem('archiveComplete')==='unlocked') {
+    revealBonus();
+  }
+}
+
+function revealBonus() {
+  const c = document.getElementById('card-bonus');
+  if (c) c.classList.add('revealed');
+}
+
+function tryUnlock() {
+  const raw = document.getElementById('codeInput').value.trim().toUpperCase();
+  if (!raw) { showFeedback('Vui lòng nhập Mã Lưu Trữ.','error'); return; }
+  const entry = ARCHIVE[raw];
+  if (!entry) { showFeedback('Mã Lưu Trữ không hợp lệ. Vui lòng kiểm tra và thử lại.','error'); shake(document.getElementById('codeInput')); return; }
+  if (localStorage.getItem(entry.key) === 'unlocked') {
+    showFeedback('Hồ sơ này đã có trong kho lưu trữ của bạn.','success');
+    openRecord(entry.id); return;
+  }
+  localStorage.setItem(entry.key,'unlocked');
+  markUnlocked(entry.id);
+  document.getElementById('codeInput').value = '';
+  showFeedback('Hồ Sơ Lưu Trữ đã được mở khóa.','success');
+  checkBonus();
+  setTimeout(() => openRecord(entry.id), 320);
+}
+
+function showFeedback(msg,type) {
+  const fb = document.getElementById('archiveFeedback');
+  fb.textContent = msg; fb.className = 'archive-feedback '+type;
+  clearTimeout(fb._t);
+  fb._t = setTimeout(()=>{ fb.textContent=''; fb.className='archive-feedback'; },4500);
+}
+
+function shake(el){ el.style.animation='none'; el.offsetHeight; el.style.animation='shake .4s ease'; }
+
+function openRecord(id) {
+  const key = id==='bonus' ? 'archiveComplete' : (Object.values(ARCHIVE).find(e=>e.id===id)||{}).key;
+  if (!key || localStorage.getItem(key)!=='unlocked') {
+    document.getElementById('archiveInput').scrollIntoView({behavior:'smooth',block:'center'});
+    const input=document.getElementById('codeInput');
+    input.focus(); input.style.borderColor='rgba(212,168,87,0.8)';
+    setTimeout(()=>input.style.borderColor='',1600); return;
+  }
+  if (id==='clt')   { openLetter(); return; }
+  if (id==='bonus') { openComplete(); return; }
+  const entry = Object.values(ARCHIVE).find(e=>e.id===id);
+  if (entry) openRecordModal(entry);
+}
+
+function openRecordModal(entry) {
+  const archiveHTML = entry.archiveLines.map(l=>`<p>${l}</p>`).join('');
+  document.getElementById('modalLabel').textContent  = entry.label;
+  document.getElementById('modalNum').textContent    = entry.num;
+  document.getElementById('modalTitle').textContent  = 'Hồ Sơ Lưu Trữ Đã Mở Khóa';
+  document.getElementById('modalText').innerHTML = `
+    <div class="unlock-record-block">
+      <div class="modal-stamp">Hồ Sơ Lưu Trữ</div>
+      <div class="unlock-archive-text">${archiveHTML}</div>
+    </div>
+    <div class="unlock-divider"></div>
+    <div class="unlock-collection-block">
+      <div class="unlock-col-label">Sưu Tập Đã Ghi Lại</div>
+      <span class="unlock-col-icon">${entry.icon}</span>
+      <div class="unlock-col-name">${entry.colName}</div>
+      <div class="unlock-col-code">Mã Lưu Trữ &nbsp;·&nbsp; ${entry.colCode}</div>
+      <div class="unlock-col-desc">${entry.colDesc}</div>
+    </div>`;
+  animateModal();
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function openLetter() {
+  document.getElementById('modalLabel').textContent  = "Kho Tàng Của Người Sưu Tập";
+  document.getElementById('modalNum').textContent    = "Collector's Letter";
+  document.getElementById('modalTitle').textContent  = "Thư Từ Người Sưu Tập";
+  document.getElementById('modalText').innerHTML = `<div class="letter-body">
+    <p>Kính gửi Nhà Thám Hiểm,</p>
+    <p>Cảm ơn bạn đã trở thành một phần của bộ sưu tập.</p>
+    <p>Qua nhiều năm, nhiều du khách đã hoàn thành các chương này. Mỗi du khách ra đi với những bức ảnh khác nhau. Những ký ức khác nhau. Những câu chuyện khác nhau.</p>
+    <p>Và đó là điều làm cho mỗi hành trình trở nên độc đáo.</p>
+    <p>Một số người nhớ những nơi họ đã ghé thăm. Một số nhớ những món ăn họ đã thưởng thức. Một số nhớ những người họ đã đồng hành.</p>
+    <p>Còn tôi, tôi tin rằng những khám phá quý giá nhất thường là những điều chúng ta không nhận ra ngay lập tức. Đôi khi ý nghĩa của chúng chỉ trở nên rõ ràng hơn nhiều sau này.</p>
+    <p class="letter-closing">Trước khi đóng kho lưu trữ này,<br>tôi muốn để lại cho bạn một đề xuất cuối cùng.</p>
+    <p class="letter-sig">Chúc bạn thượng lộ bình an.<br>&#x1F9ED; Người Sưu Tập</p>
+  </div>`;
+  animateModal();
+  document.getElementById('modalOverlay').classList.add('open');
+  document.getElementById('modalOverlay').dataset.nextPostcard='1';
+}
+
+function openComplete() {
+  document.getElementById('modalLabel').textContent  = "Kho Tàng Của Người Sưu Tập";
+  document.getElementById('modalNum').textContent    = "Lưu Trữ Hoàn Chỉnh";
+  document.getElementById('modalTitle').textContent  = "Cả Sáu Chương";
+  document.getElementById('modalText').innerHTML = `<div class="complete-body">
+    <span class="complete-icon">&#128220;</span>
+    <div class="complete-title">Lưu Trữ Hoàn Chỉnh</div>
+    <p class="complete-text">Hầu hết du khách hoàn thành năm chương.<br><br>Rất ít người hoàn thành cả sáu.<br><br>Cảm ơn bạn đã để lại trang của riêng mình trong kho lưu trữ.</p>
+  </div>`;
+  animateModal();
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function animateModal() {
+  const p=document.getElementById('modalPaper');
+  p.style.animation='none'; p.offsetHeight; p.style.animation='';
+}
+
+function closeModalOutside(e) {
+  if (e.target===document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+    if (document.getElementById('modalOverlay').dataset.nextPostcard==='1') {
+      document.getElementById('modalOverlay').dataset.nextPostcard='';
+      setTimeout(()=>document.getElementById('postcardOverlay').classList.add('open'),200);
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelector('#modalPaper .modal-close').addEventListener('click',()=>{
+    const o=document.getElementById('modalOverlay');
+    o.classList.remove('open');
+    if (o.dataset.nextPostcard==='1') {
+      o.dataset.nextPostcard='';
+      setTimeout(()=>document.getElementById('postcardOverlay').classList.add('open'),200);
+    }
+  });
+});
+
+function closePostcard(e){
+  if(e.target===document.getElementById('postcardOverlay'))
+    document.getElementById('postcardOverlay').classList.remove('open');
+}
+
+// ── Chapter Journal Data ──
+const CH_DATA = {
+  1:{
+    eyebrow:"Kho Tàng Của Người Sưu Tập · Chapter I",
+    num:"I", title:"Dragon Awakens", location:"📍 Da Nang",
+    theme:"旅程的開始",
+    journalHTML:`<p><span class="ch-journal-drop">收</span>藏家的旅程始於峴港。</p>
+<p>這不是越南最大的城市。也不是最古老的城市。但許多旅人都從這裡開始認識越南中部。</p>
+<p>收藏家認為：</p>
+<p>Mỗi hành trình đều có điểm khởi đầu riêng của nó.</p>
+<p>有些人記得第一個景點。有些人記得第一頓晚餐。有些人記得第一張照片。</p>
+<p>而所有故事，都從某個瞬間開始。</p>`,
+    mission:"拍下一張屬於你的照片。無論是龍橋、美溪沙灘，還是街角的小店。只要留下第一張照片，故事就開始了。"
+  },
+  2:{
+    eyebrow:"Kho Tàng Của Người Sưu Tập · Chapter II",
+    num:"II", title:"Secret Between Mountain & Sea", location:"📍 Ba Na Hills",
+    theme:"發現",
+    journalHTML:`<p><span class="ch-journal-drop">當</span>收藏家第一次登上山頂時，他發現風景並沒有改變。</p>
+<p>改變的是看風景的角度。</p>
+<p>有些秘密並不藏在遠方。</p>
+<p>只是等待人們換個角度去發現。</p>`,
+    mission:"在巴拿山留下一張新的視角。從山頂、纜車或佛手橋，尋找屬於你的發現。"
+  },
+  3:{
+    eyebrow:"Kho Tàng Của Người Sưu Tập · Chapter III",
+    num:"III", title:"Lanterns of Ancient Town", location:"📍 Hội An",
+    theme:"故事",
+    journalHTML:`<p><span class="ch-journal-drop">有</span>些城市在白天很美。有些城市在夜晚才真正甦醒。</p>
+<p>收藏家喜歡會安。</p>
+<p>不是因為燈籠。</p>
+<p>而是因為每一道燈光背後，似乎都藏著一個故事。</p>`,
+    mission:"在燈火之中，留下屬於你的故事。"
+  },
+  4:{
+    eyebrow:"Kho Tàng Của Người Sưu Tập · Chapter IV",
+    num:"IV", title:"Island of Simple Joys", location:"📍 Cam Thanh",
+    theme:"生活",
+    journalHTML:`<p><span class="ch-journal-drop">旅</span>行久了以後，收藏家開始發現：</p>
+<p>最珍貴的回憶，往往不是最著名的景點。而是那些沒有計畫的時刻。</p>
+<p>一次微風。一次笑聲。一次簡單的午餐。</p>`,
+    mission:"放慢腳步，感受最平凡的一刻。"
+  },
+  5:{
+    eyebrow:"Kho Tàng Của Người Sưu Tập · Chapter V",
+    num:"V", title:"Where Ocean Meets Peace", location:"📍 Son Trà Peninsula",
+    theme:"寧靜",
+    journalHTML:`<p><span class="ch-journal-drop">每</span>位旅人，最終都會遇見一個地方。讓他願意停下腳步。</p>
+<p>不是因為那裡特別熱鬧。而是因為那裡讓人感到平靜。</p>
+<p>收藏家認為，真正的旅行，有時是在安靜中完成的。</p>`,
+    mission:"找到屬於你的寧靜。"
+  },
+  6:{
+    eyebrow:"Kho Tàng Của Người Sưu Tập · Chapter VI",
+    num:"VI", title:"Your Own Journal", location:"📍 Anywhere",
+    theme:"你的故事",
+    journalHTML:`<p><span class="ch-journal-drop">前</span>面的五個篇章，屬於收藏家。最後一頁，屬於你。</p>
+<p>請選出：</p>
+<p>最喜歡的照片<br>最喜歡的地方<br>最喜歡的美食<br>最喜歡的回憶</p>
+<p>因為每位旅人，都會留下不同的一頁。</p>`,
+    mission:"記下這趟旅程中，屬於你的那一刻。"
+  }
+};
+
+function openChapter(n) {
+  const c = CH_DATA[n];
+  document.getElementById('chEyebrow').textContent   = c.eyebrow;
+  document.getElementById('chNum').textContent       = c.num;
+  document.getElementById('chTitle').textContent     = c.title;
+  document.getElementById('chLocation').textContent  = c.location;
+  document.getElementById('chTheme').textContent     = c.theme;
+  document.getElementById('chJournalText').innerHTML = c.journalHTML;
+  document.getElementById('chMissionText').textContent = c.mission;
+  const j = document.getElementById('chJournal');
+  j.style.animation='none'; j.offsetHeight; j.style.animation='';
+  document.getElementById('chModalOverlay').classList.add('open');
+  j.scrollTop = 0;
+}
+
+function closeChModalOutside(e){
+  if(e.target===document.getElementById('chModalOverlay'))
+    document.getElementById('chModalOverlay').classList.remove('open');
+}
+
+// ── SCROLL REVEAL ──
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ── NOTES CAROUSEL ──
+let noteIdx=0;
+const slides=document.querySelectorAll('.note-slide');
+const dots=document.querySelectorAll('.note-dot');
+function goNote(i){
+  slides[noteIdx].classList.remove('active'); dots[noteIdx].classList.remove('active');
+  noteIdx=i; slides[noteIdx].classList.add('active'); dots[noteIdx].classList.add('active');
+}
+setInterval(()=>goNote((noteIdx+1)%slides.length),4000);
+
+// ── NAV ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').style.boxShadow=
+    window.scrollY>40?'0 2px 20px rgba(26,18,8,0.08)':'none';
+});
+
+// ── SHAKE ──
+const _s=document.createElement('style');
+_s.textContent='@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}';
+document.head.appendChild(_s);
+
+loadSaved();
+</script>
+</body>
+</html>
